@@ -1,0 +1,65 @@
+	LIST	P=PIC16F648A
+	INCLUDE	<P16F648A.INC>
+	__CONFIG 	_CP_OFF & _MCLRE_OFF & _PWRTE_OFF & _WDT_OFF & _HS_OSC & _LVP_OFF & _BOREN_OFF    
+
+; ALL BANK
+TEMP0		EQU		H'37'
+
+;Program Start
+		ORG		H'0000'		;Reset Start
+INIT		CLRF		PORTA
+		MOVLW		H'07'
+		MOVWF		CMCON
+		BSF		STATUS,RP0	;Set Bank 1
+		MOVLW		B'00100000'
+		MOVWF		TRISA		;Set RA7-5 to Output and RA4-0 to Input 
+		CLRF		TRISB		;Set Port-B to all Output
+		MOVLW		H'3F'
+		MOVWF		PR2
+		
+		BCF		STATUS,RP0	;Set Bank 0
+		MOVLW		B'00000001'
+		MOVWF		PORTA
+		CLRF		PORTB
+		
+		MOVLW		B'00001100'
+		IORWF		CCP1CON
+		
+		BSF		T2CON, TMR2ON
+		;MOVLW		H'0F'
+		MOVLW		H'00'
+		MOVWF		CCPR1L
+		;GOTO		$
+		
+		MOVLW		B'11000000'
+		IORWF		INTCON, F
+		
+		BSF		RCSTA, SPEN
+		BSF		STATUS, RP0
+		BSF		TRISB, 1
+		BSF		TRISB, 2
+		BCF		TXSTA, SYNC
+		MOVLW		D'207'
+		MOVWF		SPBRG
+		BSF		TXSTA, TXEN
+		BCF		STATUS, RP0
+START
+		MOVLW		A'A'
+		MOVWF		TXREG
+		BSF		STATUS, RP0
+		BTFSS		TXSTA, TRMT
+		GOTO		$ - 1
+		BCF		STATUS, RP0
+		CALL		TIME10MICRO
+		GOTO		START
+		
+;Subroutine for waiting 10-micro-second		;0.25-micro*4-Clock*(2+8)-Cycle=10-micro
+TIME10MICRO	NOP				;1-Cycle
+		NOP				;1-Cycle
+		NOP				;1-Cycle
+		NOP				;1-Cycle
+		NOP				;1-Cycle
+		NOP				;1-Cycle
+		RETURN				;2-Cycle  Total 8-Cycle
+		
+		END
