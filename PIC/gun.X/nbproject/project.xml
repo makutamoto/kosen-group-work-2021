@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Group2021_Display</name>
-            <creation-uuid>cc1dc565-d41a-4b1f-864d-5b50ccd8bea3</creation-uuid>
+            <name>gun</name>
+            <creation-uuid>5bf26d85-e0b8-451c-bf17-3ad82174e3b2</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions/>
             <cpp-extensions/>
@@ -16,10 +16,6 @@
             <confList>
                 <confElem>
                     <name>default</name>
-                    <type>2</type>
-                </confElem>
-                <confElem>
-                    <name>debug</name>
                     <type>2</type>
                 </confElem>
             </confList>
