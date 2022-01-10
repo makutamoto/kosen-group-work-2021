@@ -9,10 +9,12 @@
             <c-extensions/>
             <cpp-extensions/>
             <header-extensions/>
-            <asminc-extensions/>
+            <asminc-extensions>inc</asminc-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
                     <name>default</name>
