@@ -1,33 +1,96 @@
 [
-    "zero.bmp",
-    "one.bmp",
-    "two.bmp",
-    "three.bmp",
-    "four.bmp",
-    "five.bmp",
-    "six.bmp",
-    "seven.bmp",
-    "eight.bmp",
-    "nine.bmp",
-    "a.bmp",
-    "b.bmp",
-    "c.bmp",
-    "d.bmp",
-    "e.bmp",
-    "f.bmp",
-    "g.bmp",
-    "h.bmp",
-    "i.bmp",
-    "j.bmp",
-    "k.bmp",
-    "l.bmp",
-    "m.bmp",
-    "n.bmp",
-    "o.bmp",
-    "p.bmp",
-    "q.bmp",
-    "r.bmp",
-    "s.bmp",
-    "t.bmp",
-    "cursor.bmp"
+    {
+        "filepath": "zero.bmp"
+    },
+    {
+        "filepath": "one.bmp"
+    },
+    {
+        "filepath": "two.bmp"
+    },
+    {
+        "filepath": "three.bmp"
+    },
+    {
+        "filepath": "four.bmp"
+    },
+    {
+        "filepath": "five.bmp"
+    },
+    {
+        "filepath": "six.bmp"
+    },
+    {
+        "filepath": "seven.bmp"
+    },
+    {
+        "filepath": "eight.bmp"
+    },
+    {
+        "filepath": "nine.bmp"
+    },
+    {
+        "filepath": "a.bmp"
+    },
+    {
+        "filepath": "b.bmp"
+    },
+    {
+        "filepath": "c.bmp"
+    },
+    {
+        "filepath": "d.bmp"
+    },
+    {
+        "filepath": "e.bmp"
+    },
+    {
+        "filepath": "f.bmp"
+    },
+    {
+        "filepath": "g.bmp"
+    },
+    {
+        "filepath": "h.bmp"
+    },
+    {
+        "filepath": "i.bmp"
+    },
+    {
+        "filepath": "j.bmp"
+    },
+    {
+        "filepath": "k.bmp"
+    },
+    {
+        "filepath": "l.bmp"
+    },
+    {
+        "filepath": "m.bmp"
+    },
+    {
+        "filepath": "n.bmp"
+    },
+    {
+        "filepath": "o.bmp"
+    },
+    {
+        "filepath": "p.bmp"
+    },
+    {
+        "filepath": "q.bmp"
+    },
+    {
+        "filepath": "r.bmp"
+    },
+    {
+        "filepath": "s.bmp"
+    },
+    {
+        "filepath": "t.bmp"
+    },
+    {
+        "filepath": "cursor.bmp",
+        "transparent": "BLACK"
+    }
 ]

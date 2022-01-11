@@ -487,6 +487,7 @@ RED		EQU	H'0C'
 PURPLE		EQU	H'0D'
 YELLOW		EQU	H'0E'
 WHITE		EQU	H'0F'
+NULL_COLOR	EQU	H'10'
 	
 IMAGE_LOADER	MACRO	    TILE
 		MOVLW	    high TILE
@@ -495,16 +496,34 @@ IMAGE_LOADER	MACRO	    TILE
 		ADDWF	    PCL, F
 		ENDM
 
-IMAGE		MACRO	    C0, C1, C2, C3, C4, C5 ; 17 instructions
+IMAGE		MACRO	    TRANSPARENT, C0, C1, C2, C3, C4, C5 ; 17 instructions
+		IF	    C0 == TRANSPARENT && C1 == TRANSPARENT
+		NOP
+		NOP
+		INCF	    FSR, F
+		ELSE
 		MOVLW	    (C0 << 4) | C1
 		MOVWF	    INDF
 		INCF	    FSR, F
+		ENDIF
+		IF	    C2 == TRANSPARENT && C3 == TRANSPARENT
+		NOP
+		NOP
+		INCF	    FSR, F
+		ELSE
 		MOVLW	    (C2 << 4) | C3
 		MOVWF	    INDF
 		INCF	    FSR, F
+		ENDIF
+		IF	    C4 == TRANSPARENT && C5 == TRANSPARENT
+		NOP
+		NOP
+		INCF	    FSR, F
+		ELSE
 		MOVLW	    (C4 << 4) | C5
 		MOVWF	    INDF
 		INCF	    FSR, F
+		ENDIF
 		RETURN
 		ENDM
 

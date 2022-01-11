@@ -52,12 +52,13 @@ def getTilename(filepath):
 # PURPLE = 13
 # YELLOW = 14
 # WHITE = 15
-def generateTile(image, tileName):
+def generateTile(image, tileName, transparent):
     label = "TILE_" + tileName
     tile = label + "\n"
     tile += "\t\tIMAGE_LOADER\t    {label}\n".format(label=label)
     for y in range(6):
         tile += "\t\tIMAGE\t    "
+        tile += transparent + ", "
         for x in range(6):
             color = image.getpixel((x, y))
             color = (color & 0b1010) | ((color & 0b0100) >> 2) | ((color & 0b0001) << 2)
@@ -109,11 +110,16 @@ def generateTileCode(address, filename):
     table += "\t\tADDWF\t    PCL, F\n"
     code = ""
     definitions = readDefinitionJson(filename)
-    for filepath in definitions:
+    for tile in definitions:
+        filepath = tile['filepath']
         tilename = getTilename(filepath)
+        if 'transparent' in tile:
+            transparent = tile['transparent']
+        else:
+            transparent = 'NULL_COLOR'
         image = openImage(filepath)
         table += "\t\tGOTO\t    TILE_{tilename}\n".format(tilename=tilename)
-        code += generateTile(image, tilename)
+        code += generateTile(image, tilename, transparent)
     for i in range(63 - len(definitions)):
         table += "\t\tRETURN\n"
     return table + code
