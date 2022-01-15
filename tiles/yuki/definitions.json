@@ -1,0 +1,53 @@
+[
+    {
+        "filepath": "yuki/alian.bmp"
+    },
+    {
+        "filepath": "yuki/alian_body.bmp"
+    },
+    {
+        "filepath": "yuki/blood_zombie_body.bmp"
+    },
+    {
+        "filepath": "yuki/blood_zombie_head.bmp"
+    },
+    {
+        "filepath": "yuki/golden_zombie_head.bmp"
+    },
+    {
+        "filepath": "yuki/golden_zombie_body.bmp"
+    },
+    {
+        "filepath": "yuki/heart.bmp"
+    },
+    {
+        "filepath": "yuki/horse.bmp"
+    },
+    {
+        "filepath": "yuki/map_icon.bmp"
+    },
+    {
+        "filepath": "yuki/pin.bmp"
+    },
+    {
+        "filepath": "yuki/pyramid.bmp"
+    },
+    {
+        "filepath": "yuki/rock.bmp"
+    },
+    {
+        "filepath": "yuki/sky_and_cloud.bmp"
+    },
+    {
+        "filepath": "yuki/sky.bmp"
+    },
+    {
+        "filepath": "yuki/target.bmp"
+    },
+    {
+        "filepath": "yuki/tree.bmp"
+    },
+    {
+        "filepath": "cursor.bmp"
+    }
+]

@@ -43,8 +43,8 @@ def getTilename(filepath):
 # DARKRED = 4
 # DARKPURPLE = 5
 # DARKYELLOW = 6
-# LIGHTGREY = 7
-# DARKGREY = 8
+# DARKGREY = 7
+# GRAY = 8
 # BLUE = 9
 # GREEN = 10
 # CYAN = 11
@@ -77,9 +77,9 @@ def generateTile(image, tileName, transparent):
             elif color == 6:
                 tile += "DARKYELLOW, "
             elif color == 7:
-                tile += "LIGHTGREY, "
+                tile += "GRAY, "
             elif color == 8:
-                tile += "DARKGREY, "
+                tile += "DARKGRAY, "
             elif color == 9:
                 tile += "BLUE, "
             elif color == 10:
