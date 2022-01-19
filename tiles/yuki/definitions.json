@@ -48,6 +48,7 @@
         "filepath": "yuki/tree.bmp"
     },
     {
-        "filepath": "cursor.bmp"
+        "filepath": "cursor.bmp",
+        "transparent": "BLACK"
     }
 ]
