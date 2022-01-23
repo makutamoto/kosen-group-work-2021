@@ -24,52 +24,16 @@
         "filepath": "seven.bmp"
     },
     {
-        "filepath": "eight.bmp"
-    },
-    {
-        "filepath": "nine.bmp"
-    },
-    {
-        "filepath": "a.bmp"
-    },
-    {
-        "filepath": "b.bmp"
-    },
-    {
-        "filepath": "c.bmp"
-    },
-    {
-        "filepath": "d.bmp"
-    },
-    {
-        "filepath": "e.bmp"
-    },
-    {
-        "filepath": "f.bmp"
-    },
-    {
         "filepath": "g.bmp"
-    },
-    {
-        "filepath": "h.bmp"
     },
     {
         "filepath": "i.bmp"
     },
     {
-        "filepath": "j.bmp"
-    },
-    {
-        "filepath": "k.bmp"
-    },
-    {
-        "filepath": "l.bmp"
-    },
-    {
-        "filepath": "m.bmp"
-    },
-    {
         "filepath": "n.bmp"
+    },
+    {
+        "filepath": "win_n.bmp"
     },
     {
         "filepath": "o.bmp"
@@ -78,19 +42,57 @@
         "filepath": "p.bmp"
     },
     {
-        "filepath": "q.bmp"
+        "filepath": "w.bmp"
     },
     {
-        "filepath": "r.bmp"
+        "filepath": "title_background.bmp"
     },
     {
-        "filepath": "s.bmp"
+        "filepath": "table_background.bmp"
     },
     {
-        "filepath": "t.bmp"
+        "filepath": "left.bmp"
     },
     {
-        "filepath": "cursor.bmp",
+        "filepath": "right.bmp"
+    },
+    {
+        "filepath": "top.bmp"
+    },
+    {
+        "filepath": "bottom.bmp"
+    },
+    {
+        "filepath": "top_left_corner.bmp"
+    },
+    {
+        "filepath": "top_right_corner.bmp"
+    },
+    {
+        "filepath": "bottom_left_corner.bmp"
+    },
+    {
+        "filepath": "bottom_right_corner.bmp"
+    },
+    {
+        "filepath": "center.bmp"
+    },
+    {
+        "filepath": "top_center.bmp"
+    },
+    {
+        "filepath": "bottom_center.bmp"
+    },
+    {
+        "filepath": "paddle0.bmp",
+        "transparent": "BLACK"
+    },
+    {
+        "filepath": "paddle1.bmp",
+        "transparent": "BLACK"
+    },
+    {
+        "filepath": "ball.bmp",
         "transparent": "BLACK"
     }
 ]

@@ -115,8 +115,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fff"/>
         <property key="poweroptions.powerenable" value="true"/>
-        <property key="programmerToGoFilePath"
-                  value="M:/Repositories/Group2021/PIC/display.X/debug/default/Group2021_ptg"/>
         <property key="programmerToGoImageName" value="Group2021_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

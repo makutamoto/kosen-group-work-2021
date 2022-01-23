@@ -43,8 +43,8 @@ def getTilename(filepath):
 # DARKRED = 4
 # DARKPURPLE = 5
 # DARKYELLOW = 6
-# DARKGREY = 7
-# GRAY = 8
+# DARKGREY = 8
+# GRAY = 7
 # BLUE = 9
 # GREEN = 10
 # CYAN = 11
@@ -52,8 +52,7 @@ def getTilename(filepath):
 # PURPLE = 13
 # YELLOW = 14
 # WHITE = 15
-def generateTile(image, tileName, transparent):
-    label = "TILE_" + tileName
+def generateTile(image, label, transparent):
     tile = label + "\n"
     tile += "\t\tIMAGE_LOADER\t    {label}\n".format(label=label)
     for y in range(6):
@@ -76,9 +75,9 @@ def generateTile(image, tileName, transparent):
                 tile += "DARKPURPLE, "
             elif color == 6:
                 tile += "DARKYELLOW, "
-            elif color == 7:
-                tile += "GRAY, "
             elif color == 8:
+                tile += "GRAY, "
+            elif color == 7:
                 tile += "DARKGRAY, "
             elif color == 9:
                 tile += "BLUE, "
@@ -109,8 +108,9 @@ def generateTileCode(address, filename):
     table += "TILE_TABLE\n"
     table += "\t\tADDWF\t    PCL, F\n"
     code = ""
+    name_table = ""
     definitions = readDefinitionJson(filename)
-    for tile in definitions:
+    for i, tile in enumerate(definitions):
         filepath = tile['filepath']
         tilename = getTilename(filepath)
         if 'transparent' in tile:
@@ -119,10 +119,12 @@ def generateTileCode(address, filename):
             transparent = 'NULL_COLOR'
         image = openImage(filepath)
         table += "\t\tGOTO\t    TILE_{tilename}\n".format(tilename=tilename)
-        code += generateTile(image, tilename, transparent)
+        label = "TILE_" + tilename
+        code += generateTile(image, label, transparent)
+        name_table += f"{label}\tEQU\t\tD'{i}'\n"
     for i in range(63 - len(definitions)):
         table += "\t\tRETURN\n"
-    return table + code
+    return (name_table, table + code)
 
 # get necessary information from terminal and generate MPASM code and save it to a file
 if __name__ == "__main__":
@@ -132,6 +134,7 @@ if __name__ == "__main__":
     parser.add_argument('--address', type=str, help='start address of tiles in the program memory (hex)')
     parser.add_argument('--definition', type=str, help='definition json file')
     parser.add_argument('--output', type=str, help='output file')
+    parser.add_argument('--table', type=str, help='table file')
     args = parser.parse_args()
     if args.address is None:
         print("Please specify the start address of tiles in the program memory")
@@ -142,5 +145,11 @@ if __name__ == "__main__":
     if args.output is None:
         print("Please specify the output file")
         sys.exit(1)
+    if args.table is None:
+        print("Please specify the table file")
+        sys.exit(1)
+    table, code = generateTileCode(args.address, args.definition)
     with open(args.output, "w") as f:
-        f.write(generateTileCode(args.address, args.definition))
+        f.write(code)
+    with open(args.table, "w") as f:
+        f.write(table)
