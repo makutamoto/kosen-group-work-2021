@@ -17,6 +17,8 @@ def main():
     address = 0x20F
     filename = sys.argv[1]
     frames = openWaveAndReadframes(filename)
+    print(f"SOUND_LENGTH_LOW\t\tEQU\t\tD'{(len(frames) - 1) % 256}'")
+    print(f"SOUND_LENGTH_HIGH\t\tEQU\t\tD'{(len(frames) - 1) // 256}'")
     for d in frames:
         if address == 0x800:
             print("\t\tORG\t\tH'800'")
