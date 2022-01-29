@@ -21,9 +21,6 @@
         "filepath": "six.bmp"
     },
     {
-        "filepath": "seven.bmp"
-    },
-    {
         "filepath": "g.bmp"
     },
     {
@@ -46,6 +43,9 @@
     },
     {
         "filepath": "title_background.bmp"
+    },
+    {
+        "filepath": "title_background_edge.bmp"
     },
     {
         "filepath": "table_background.bmp"
